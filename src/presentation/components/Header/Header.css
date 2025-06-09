@@ -2,7 +2,7 @@
     display:flex;
     justify-content: space-between;
     padding: 8px 16px;
-    background-color: #ffc65c;
+    background-color: var(--main-color);
 }
 
 .header-title {
