@@ -1,15 +1,11 @@
 import type { Character } from "../domain/character";
 
 export const fetchCharacters = async (
-  name?: string,
-  from?: number,
-  to?: number
+  name?: string
 ): Promise<Character[]> => {
   try {
     const params = new URLSearchParams();
     if (name) params.append('name', name);
-    if (from) params.append('kiFrom', from.toString());
-    if (to) params.append('kiTo', to.toString());
 
     const response = await fetch(
       `https://dragonball-api.com/api/characters?${params.toString()}`

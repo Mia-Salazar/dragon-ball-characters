@@ -1,30 +1,23 @@
 import { useSearchParams } from "react-router-dom";
+
 import { Layout } from "../../components";
-import { useSearchCharacterQuery } from "../../hooks/useSearchCharacterQuery";
+import { useCharacterFilter } from "../../hooks/useCharacterFiltered";
 
 const Results = () => {
     const [searchParams] = useSearchParams();
+    const name = searchParams.get('name') || "";
+    const from = Number(searchParams.get('from'));
+    const to = Number(searchParams.get('to'));
 
-    const safeGet = (param: string | null): string | undefined =>
-    param && param !== 'undefined' ? param : undefined;
-
-    const name = safeGet(searchParams.get('name'));
-    const from = safeGet(searchParams.get('from'));
-    const to = safeGet(searchParams.get('to'));
-
-    const filters = {
-        name,
-        from: from ? Number(from) : undefined,
-        to: to ? Number(to) : undefined,
-    };
-
-    const { data, isLoading } = useSearchCharacterQuery(filters);
+    const { data, isLoading } = useCharacterFilter(from, to, name)
 
     if (isLoading) return <div>Loading</div>
 
+    console.log(data, 'data')
+
     return (
         <Layout>
-            <p>hola</p>
+            <h2>{data?.length} results found:</h2>
             {data?.map(element => <p>{element.id}</p>)}
         </Layout>
     );

@@ -74,3 +74,4 @@ src/
 - Add tests
 - Create a custom spinner for loading
 - Improve error management
+- Icons on inputs
