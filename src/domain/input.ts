@@ -5,5 +5,5 @@ export interface InputProps {
     placeholder: string;
     text: string;
     type?: string;
-    value: string;
+    value?: string;
 };

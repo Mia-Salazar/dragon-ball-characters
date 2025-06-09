@@ -1,4 +1,5 @@
 .input-container {
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -6,6 +7,13 @@
 
 .label {
     margin-bottom: 4px;
+}
+
+/*We hide it visually but reacheable to assitive technologies*/
+
+.label.hide {
+    position: absolute;
+    left: -9999em;
 }
 
 .input {
