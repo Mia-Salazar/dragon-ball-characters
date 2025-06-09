@@ -1,4 +1,5 @@
 import Header from './Header/Header';
+import Input from './Input/Input';
 import Layout from './Layout/Layout';
 
-export { Layout, Header };
+export { Header, Input, Layout, };
