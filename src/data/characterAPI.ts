@@ -1,37 +1,27 @@
 import type { Character } from "../domain/character";
 
-export const fetchCharacters = async (): Promise<{ items: Character[] }> => {
+export const fetchCharacters = async (
+  name?: string,
+  from?: number,
+  to?: number
+): Promise<Character[]> => {
   try {
-    const response = await fetch(
-      `https://dragonball-api.com/api/characters`
-    );
-    if (!response.ok) throw new Error('Error al obtener los datos');
-    return await response.json();
-  } catch (error: any) {
-    throw new Error(error.message);
-  }
-};
+    const params = new URLSearchParams();
+    if (name) params.append('name', name);
+    if (from) params.append('kiFrom', from.toString());
+    if (to) params.append('kiTo', to.toString());
 
-export const findCharacters = async (name: string): Promise<{ items: Character[] }> => {
-  try {
     const response = await fetch(
-      `https://dragonball-api.com/api/characters?name=${name}`
+      `https://dragonball-api.com/api/characters?${params.toString()}`
     );
-    if (!response.ok) throw new Error('Error al obtener los datos');
-    return await response.json();
-  } catch (error: any) {
-    throw new Error(error.message);
-  }
-};
 
-export const findCharacter = async (id: string): Promise<Character> => {
-  try {
-    const response = await fetch(
-      `https://dragonball-api.com/api/characters/${id}`
-    );
     if (!response.ok) throw new Error('Error al obtener los datos');
-    return await response.json();
-  } catch (error: any) {
-    throw new Error(error.message);
+
+    const json = await response.json();
+
+    return json;
+  } catch (error) {
+    if (error instanceof Error) throw new Error(error.message);
+    throw new Error('Error desconocido');
   }
 };

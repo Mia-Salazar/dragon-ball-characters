@@ -72,3 +72,5 @@ src/
 ##TODO
 
 - Add tests
+- Create a custom spinner for loading
+- Improve error management
