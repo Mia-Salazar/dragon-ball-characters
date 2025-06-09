@@ -52,3 +52,20 @@ export default tseslint.config({
   },
 })
 ```
+
+##Architecture
+
+src/
+├── domain/                  # Tipos y reglas del dominio
+│   └── character.ts         # Interface Character
+├── data/                    # Acceso a datos (API, storage, etc.)
+│   └── characterApi.ts      # fetchCharacters, findCharacter, etc.
+├── application/             # Casos de uso (opcional)
+│   └── characterService.ts  # Lógica que coordina datos y dominio
+├── presentation/            # UI + hooks
+│   ├── hooks/
+│   │   └── useSearchCharacterQuery.ts
+│   └── components/          # Componentes React
+├── app/                     # Setup general (React Query Provider, router, etc.)
+└── main.tsx                 # Entry point
+  
