@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
-import { Home } from "../presentation/pages";
+
+import { Home, Results } from "../presentation/pages";
 
 const routes = [
   {
@@ -7,11 +8,15 @@ const routes = [
     children: [
       {
         index: true,
-        element: <Navigate to="/characters" />,
+        element: <Navigate to="/search" />,
       },
       {
-        path: '/characters',
+        path: '/search',
         element: <Home />,
+      },
+      {
+        path: '/results',
+        element: <Results />,
       }
     ],
   },

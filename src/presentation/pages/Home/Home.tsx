@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 import { Button, Input, Layout } from "../../components";
 import './Home.css'
 
 const Home = () => {
+    const navigate = useNavigate();
     const [form, setForm] = useState({name: '', from: undefined, to: undefined})
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,6 +19,7 @@ const Home = () => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        navigate(`/results?name=${form.name}&from=${form.from}&to=${form.to}`);
     };
 
     return (

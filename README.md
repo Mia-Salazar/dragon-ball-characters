@@ -69,3 +69,6 @@ src/
 ├── app/                     # Setup general (React Query Provider, router, etc.)
 └── main.tsx                 # Entry point
   
+##TODO
+
+- Add tests
