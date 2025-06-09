@@ -1,7 +1,10 @@
+import { Layout } from "../../components";
 
 const Home = () => {
   return (
-    <p>hola</p>
+    <Layout>
+        hola
+    </Layout>
   );
 };
 
