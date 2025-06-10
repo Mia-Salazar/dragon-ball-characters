@@ -26,7 +26,6 @@ The API used is Dragon Ball API. You can read [the documentation here](https://w
 - React: Library used for the whole application
 - Typescript: For interactions
 - CSS: for styling grouping styled by type
-- Jest & testing-library: For testing
 - React Query: To cache responses
 
 ## Decissions
@@ -35,6 +34,7 @@ The API used is Dragon Ball API. You can read [the documentation here](https://w
 - I have added React Query to improve cache and error management
 - I have used FontAwesome for icons
 - I have used semantic HTML and ARIA labels to improve accessibility
+- I have used only the main branch for simplicity adding commit on important highlights
 
 ## Architecture
 <pre>
@@ -52,10 +52,10 @@ src/
 │   └── components/          # React Components
 │   └── pages/               # React Pages
 </pre>
+
 ## TODO
 
 - Add tests
-- Create a custom spinner for loading
 - Improve error management
 - Add code formater
-- Use branches
+- Use branches for each feature
