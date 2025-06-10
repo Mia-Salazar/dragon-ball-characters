@@ -11,7 +11,7 @@ const Item = ({ description, image, name, ki }: Character) => {
     }
 
     return (
-        <li className="item-container">
+        <li className={isOpen ? 'item-container selected' : 'item-container'}>
             <button className="item-button" onClick={handleClick} aria-label="Open dropdown">
                 <h3 className={isOpen ? 'hidden' : 'item-title'}>{name} </h3>
                 <p className="item-subtitle">
