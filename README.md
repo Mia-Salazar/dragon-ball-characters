@@ -78,3 +78,4 @@ src/
 - Improve error management
 - Icons on inputs
 - Add code formater
+- Use branches

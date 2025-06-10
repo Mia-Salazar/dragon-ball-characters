@@ -14,7 +14,10 @@ const Item = ({ description, image, name, ki }: Character) => {
         <li className="item-container">
             <button className="item-button" onClick={handleClick} aria-label="Open dropdown">
                 <h3 className="item-title">{name} </h3>
-                <p className="item-subtitle"><span className="item-ki">{ki}</span> <i aria-hidden="true" className="arrow-down"></i></p>  
+                <p className="item-subtitle">
+                    <span className="item-ki">{ki}</span> 
+                    <i aria-hidden="true" className={ isOpen ? 'arrow up' : 'arrow'}></i>
+                </p>  
             </button>
             {isOpen && <div>
                 <figure>
