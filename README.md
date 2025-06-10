@@ -24,7 +24,8 @@ The API used is Dragon Ball API. You can read [the documentation here](https://w
 
 ## Technologies
 - React: Library used for the whole application
-- Typescript: For interactions
+- Typescript: For logic
+- Vitest & testing library: for testing
 - CSS: for styling grouping styled by type
 - React Query: To cache responses
 
@@ -55,7 +56,7 @@ src/
 
 ## TODO
 
-- Add tests
+- Add more tests
 - Improve error management
 - Add code formater
 - Use branches for each feature
