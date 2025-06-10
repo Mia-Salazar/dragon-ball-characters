@@ -14,11 +14,6 @@ To run tests:
 npm run test
 ```
 
-To generate a build:
-```console
-npm run build
-```
-
 ## API
 The API used is Dragon Ball API. You can read [the documentation here](https://web.dragonball-api.com/documentation)
 
