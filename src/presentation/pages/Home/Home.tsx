@@ -23,8 +23,6 @@ const Home = () => {
         navigate(`/results?name=${form.name}&from=${form.from}&to=${form.to}`);
     };
 
-    console.log(!form.name, !form.from,  !form.to, form)
-
     return (
         <Layout>
             <h2>What Dragon Ball character are you looking for?</h2>
