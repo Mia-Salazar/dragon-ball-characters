@@ -1,4 +1,4 @@
 export interface ButtonProps {
-    isDisabled: boolean;
-    text: string;
+  isDisabled: boolean;
+  text: string;
 }

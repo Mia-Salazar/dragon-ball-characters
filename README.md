@@ -30,12 +30,13 @@ The API used is Dragon Ball API. You can read [the documentation here](https://w
 - React Query: To cache responses
 
 ## Decissions
-- I have used this architecture in order to keep layers separated and improve scalability and readbility
-- For ordering CSS I have grouped styling properties by type
-- I have added React Query to improve cache and error management
-- I have used FontAwesome for icons
-- I have used semantic HTML and ARIA labels to improve accessibility
-- I have used only the main branch for simplicity adding commit on important highlights
+- Architecture & Scalability: I've implemented a layered architecture to ensure clear separation of concerns, significantly boosting scalability and readability.
+- CSS Organization: Styling properties are grouped by type for enhanced CSS readability and maintainability.
+- Data Management: React Query is integrated for robust caching, automatic re-fetching, and streamlined error management, improving performance and resilience.
+- Iconography: FontAwesome is used for all icons, ensuring consistency and easy customization.
+- Accessibility: I've prioritized accessibility using semantic HTML and appropriate ARIA labels for broader usability.
+- Version Control: The project is managed on the main branch for simplicity, with commits highlighting key features and milestones.
+- Code Consistency: All interface properties and component props are organized alphabetically to maintain high code quality and consistency.
 
 ## Architecture
 <pre>
@@ -58,5 +59,6 @@ src/
 
 - Add more tests
 - Improve error management
-- Add code formater
+- Improve format and standarize it
 - Use branches for each feature
+- Improve naming on CSS styles and components

@@ -1,14 +1,14 @@
 .button {
-    position: absolute;
-    bottom: 16px;
-    /*we delete home padding*/
-    width: calc(100% - 16px - 16px);
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 8px;
-    background-color: var(--main-color);
+  position: absolute;
+  bottom: 16px;
+  /*we delete home padding*/
+  width: calc(100% - 16px - 16px);
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: var(--main-color);
 }
 
 .button:disabled{
-    background-color: var(#fdd181)
+  background-color: var(#fdd181)
 }

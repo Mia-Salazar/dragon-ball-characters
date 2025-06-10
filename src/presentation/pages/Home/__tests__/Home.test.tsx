@@ -15,49 +15,49 @@ vi.mock('react-router-dom', async (importOriginal) => {
 });
 
 describe('Home Component', () => {
-    beforeEach(() => {
-        mockedUseNavigate.mockClear();
-    });
+	beforeEach(() => {
+		mockedUseNavigate.mockClear();
+	});
 
-    test('should fill the form', async () => {
-        render(
-            <MemoryRouter>
-                <Home/>
-            </MemoryRouter>  
-        );
+	test('should fill the form', async () => {
+		render(
+			<MemoryRouter>
+				<Home/>
+			</MemoryRouter>  
+		);
 
-        const name = screen.getByText(/name/i);
-        await userEvent.type(name, "hello")
+		const name = screen.getByText(/name/i);
+		await userEvent.type(name, "hello")
 
-        const from = screen.getByPlaceholderText(/from/i);
-        await userEvent.type(from, "1")
+		const from = screen.getByPlaceholderText(/from/i);
+		await userEvent.type(from, "1")
 
-        const to = screen.getByPlaceholderText(/to/i);
-        await userEvent.type(to, "1")
+		const to = screen.getByPlaceholderText(/to/i);
+		await userEvent.type(to, "1")
 
-        const button = screen.getByText("Search");
-        expect(button).toBeEnabled()
-    });
+		const button = screen.getByText("Search");
+		expect(button).toBeEnabled()
+	});
 
-    test('should be redirected when cliking on submit button', async () => {
-        render(
-            <MemoryRouter>
-                <Home/>
-            </MemoryRouter> 
-        );
+	test('should be redirected when cliking on submit button', async () => {
+		render(
+			<MemoryRouter>
+				<Home/>
+			</MemoryRouter> 
+		);
 
-        const name = screen.getByText(/name/i);
-        await userEvent.type(name, "hello")
+		const name = screen.getByText(/name/i);
+		await userEvent.type(name, "hello")
 
-        const from = screen.getByPlaceholderText(/from/i);
-        await userEvent.type(from, "1")
+		const from = screen.getByPlaceholderText(/from/i);
+		await userEvent.type(from, "1")
 
-        const to = screen.getByPlaceholderText(/to/i);
-        await userEvent.type(to, "1")
+		const to = screen.getByPlaceholderText(/to/i);
+		await userEvent.type(to, "1")
 
-        const button = screen.getByText("Search");
-        await userEvent.click(button);
+		const button = screen.getByText("Search");
+		await userEvent.click(button);
 
-        expect(mockedUseNavigate).toHaveBeenCalledWith('/results?name=hello&from=1&to=1');
-    });
+		expect(mockedUseNavigate).toHaveBeenCalledWith('/results?name=hello&from=1&to=1');
+	});
 });

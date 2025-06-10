@@ -1,41 +1,41 @@
 .input-container {
-    position: relative;
-    display: flex;
-    margin-bottom: 16px;
-    flex-direction: column;
-    width: 100%;
+  position: relative;
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: column;
+  width: 100%;
 }
 
 .label {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 /*We hide it visually but reacheable to assitive technologies*/
 .label.hide {
-    position: absolute;
-    left: -9999em;
+  position: absolute;
+  left: -9999em;
 }
 
 .input {
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 8px;
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 8px;
 }
 
 .input.text {
-    padding-left: 32px;
+  padding-left: 32px;
 }
 
 .input-container .arrow {
-    position: absolute;
-    right: 16px;
-    bottom: 21px;
-    padding: 2px;
+  position: absolute;
+  right: 16px;
+  bottom: 21px;
+  padding: 2px;
 }
 
 .input-icon {
-    position: absolute;
-    margin: 0;
-    top: 38px;
-    left: 16px;
+  position: absolute;
+  margin: 0;
+  top: 38px;
+  left: 16px;
 }

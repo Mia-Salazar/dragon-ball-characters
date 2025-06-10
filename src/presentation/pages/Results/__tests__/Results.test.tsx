@@ -44,11 +44,11 @@ const createTestQueryClient = () =>
 describe('Results Page Component', () => {
   test('should show character information', async () => {
     render(
-        <QueryClientProvider client={createTestQueryClient()}>
-            <MemoryRouter>
-                <Results />
-            </MemoryRouter>
-        </QueryClientProvider>
+			<QueryClientProvider client={createTestQueryClient()}>
+				<MemoryRouter>
+					<Results />
+				</MemoryRouter>
+			</QueryClientProvider>
     );
 
     const name = await screen.findByText(/Goku/i);

@@ -1,21 +1,21 @@
 .header {
-    display:flex;
-    justify-content: space-between;
-    padding: 8px 16px;
-    background-color: var(--main-color);
+  display:flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: var(--main-color);
 }
 
 .header-title {
-    margin: 0;
-    font-size: 24px;
-    color: black;
+  margin: 0;
+  font-size: 24px;
+  color: black;
 }
 
 .header-link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .header-wrapper {
-    width: 50px;
-    margin: 0;
+  width: 50px;
+  margin: 0;
 }
