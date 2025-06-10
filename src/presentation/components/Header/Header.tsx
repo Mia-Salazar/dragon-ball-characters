@@ -11,7 +11,7 @@ const Header = () => {
             <h1 className="header-title">Dragon Ball character finder</h1>
         </Link>
         <figure className="header-wrapper">
-            <img className="header-image" alt="" src={CastImage} />
+            <img className="image" alt="" src={CastImage} />
         </figure>
     </header>
   );
