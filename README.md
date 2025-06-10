@@ -29,8 +29,8 @@ The API used is Dragon Ball API. You can read [the documentation here](https://w
 - Jest & testing-library: For testing
 - React Query: To cache responses
 
-##Architecture
-
+## Architecture
+<pre>
 src/
 ├── app/                     # Setup general (React Query Provider, router, etc.)
 │   └── providers            # Providers needed, such as React Query Provider
@@ -44,8 +44,8 @@ src/
 │   ├── hooks/               # Custom hooks
 │   └── components/          # React Components
 │   └── pages/               # React Pages
-  
-##TODO
+</pre>
+## TODO
 
 - Add tests
 - Create a custom spinner for loading
