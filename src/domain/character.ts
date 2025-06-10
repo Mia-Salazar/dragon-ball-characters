@@ -5,3 +5,7 @@ export interface Character {
   ki: string;
   name: string;
 }
+
+export interface CharacterWithoutName {
+  items: Character[]
+}
