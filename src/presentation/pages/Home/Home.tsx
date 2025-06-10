@@ -6,7 +6,7 @@ import './Home.css'
 
 const Home = () => {
     const navigate = useNavigate();
-    const [form, setForm] = useState({name: '', from: undefined, to: undefined})
+    const [form, setForm] = useState({name: '', from: '', to: ''})
     const buttonIsDisabled = !form.name && !form.from && !form.to
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
