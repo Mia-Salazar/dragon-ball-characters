@@ -5,11 +5,11 @@ import type { InputProps } from "../../../domain/input";
 import './Input.css'
 
 const Input = ({ hasLabel = true, id, onChange, placeholder, text, type = "text", value }: InputProps) => {
-  const isNameInput = type === "text";
+  const isTextInput = type === "text";
   
   return (
     <div className="input-container">
-      {isNameInput && (
+      {isTextInput && (
         <figure className="input-icon" aria-hidden="true">
           <FontAwesomeIcon icon={faSearch} size="xs" />
         </figure>
@@ -17,8 +17,8 @@ const Input = ({ hasLabel = true, id, onChange, placeholder, text, type = "text"
       {hasLabel && (
         <label className={hasLabel ? "label" : "label hide"} htmlFor={id}>{text}</label>
       )}
-      <input className={isNameInput ? 'input text' : 'input'} type={type} id={id} name={id} placeholder={placeholder} value={value} onChange={(event) =>onChange(event)}  />
-      {!isNameInput && (
+      <input className={isTextInput ? 'input text' : 'input'} type={type} id={id} name={id} placeholder={placeholder} value={value} onChange={(event) =>onChange(event)}  />
+      {!isTextInput && (
         <i aria-hidden="true" className="arrow"></i>
       )}
     </div>
