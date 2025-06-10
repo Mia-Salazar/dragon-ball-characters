@@ -30,7 +30,7 @@ The API used is Dragon Ball API. You can read [the documentation here](https://w
 - React Query: To cache responses
 
 ##Architecture
-
+<pre>
 src/
 ├── app/                     # Setup general (React Query Provider, router, etc.)
 │   └── providers            # Providers needed, such as React Query Provider
@@ -44,7 +44,7 @@ src/
 │   ├── hooks/               # Custom hooks
 │   └── components/          # React Components
 │   └── pages/               # React Pages
-  
+</pre>
 ##TODO
 
 - Add tests
