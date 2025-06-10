@@ -53,6 +53,8 @@ export default tseslint.config({
 })
 ```
 
+- CSS Grouped by type 
+
 ##Architecture
 
 src/
@@ -75,3 +77,4 @@ src/
 - Create a custom spinner for loading
 - Improve error management
 - Icons on inputs
+- Add code formater

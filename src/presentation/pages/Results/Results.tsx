@@ -1,7 +1,9 @@
 import { useSearchParams } from "react-router-dom";
 
-import { Layout } from "../../components";
+import { Item, Layout } from "../../components";
 import { useCharacterFilter } from "../../hooks/useCharacterFiltered";
+
+import "./Results.css"
 
 const Results = () => {
     const [searchParams] = useSearchParams();
@@ -18,7 +20,9 @@ const Results = () => {
     return (
         <Layout>
             <h2>{data?.length} results found:</h2>
-            {data?.map(element => <p>{element.id}</p>)}
+            <ul className="list">
+                {data?.map(({id, image, ki, name, description}) => <Item key={id} name={name} image={image} ki={ki} description={description} />)}
+            </ul>
         </Layout>
     );
 };
