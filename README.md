@@ -1,75 +1,49 @@
-# React + TypeScript + Vite
+# Dragon Ball characters
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live
+The web is live [here]()
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Comands
+To run the application:
+```console
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+To run tests:
+```console
+npm run test
 ```
 
-- CSS Grouped by type 
+To generate a build:
+```console
+npm run build
+```
+
+## API
+The API used is Dragon Ball API. You can read [the documentation here](https://web.dragonball-api.com/documentation)
+
+## Technologies
+- React: Library used for the whole application
+- Typescript
+- CSS: for styling grouping styled by type
+- Jest & testing-library: For testing
+- React Query: To cache responses
 
 ##Architecture
 
 src/
-├── domain/                  # Tipos y reglas del dominio
-│   └── character.ts         # Interface Character
+├── app/                     # Setup general (React Query Provider, router, etc.)
+│   └── providers            # Providers needed, such as React Query Provider
+├── application/             # Use cases
+├── assets/                  # Assets, for example, images
+├── data/                    # Functions that call endpoints
+├── domain/                  # Domain types and rules
 ├── data/                    # Acceso a datos (API, storage, etc.)
 │   └── characterApi.ts      # fetchCharacters, findCharacter, etc.
-├── application/             # Casos de uso (opcional)
-│   └── characterService.ts  # Lógica que coordina datos y dominio
 ├── presentation/            # UI + hooks
-│   ├── hooks/
-│   │   └── useSearchCharacterQuery.ts
-│   └── components/          # Componentes React
-├── app/                     # Setup general (React Query Provider, router, etc.)
-└── main.tsx                 # Entry point
+│   ├── hooks/               # Custom hooks
+│   └── components/          # React Components
+│   └── pages/               # React Pages
   
 ##TODO
 
