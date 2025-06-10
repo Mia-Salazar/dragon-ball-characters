@@ -1,20 +1,9 @@
 import { useSearchParams } from "react-router-dom";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-
-import { Item, Layout } from "../../components";
+import { Item, Layout, Loading } from "../../components";
 import { useCharacterFilter } from "../../hooks/useCharacterFiltered";
 
 import "./Results.css"
-
-const Loading = () => {
-    return (
-        <figure aria-hidden="true">
-            <FontAwesomeIcon icon={faSpinner} size="xs" />
-        </figure>
-    )
-}
 
 const Results = () => {
     const [searchParams] = useSearchParams();
