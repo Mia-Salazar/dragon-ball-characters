@@ -1,4 +1,4 @@
-import type { Character } from "../../domain/character";
+import type { Character, CharacterWithoutName } from "../../domain/character";
 import { useSearchCharacterQuery } from "./useSearchCharacterQuery";
 
 const parseKi = (rawKi: string): number => {
@@ -23,21 +23,48 @@ const parseKi = (rawKi: string): number => {
 
 
 export const filterByKi = (
-  data: Character[] | undefined,
+  data: Character[] | [],
   from?: number,
   to?: number
-): Character[] | undefined => {
-    if (!data) return data;
+): Character[] => {
+  if (!from && !to) {
+    return data;
+  }
 
-    if (!from && !to) return data
+  let filteredData: Character[] = data;
 
-    if (!from && to) return data.filter(character => parseKi(character.ki) < to)
+  if (from !== undefined && to !== undefined) {
+    filteredData = data.filter(character => {
+      const kiValue = parseKi(character.ki);
+      return kiValue > from && kiValue < to;
+    });
+  }
+  else if (from !== undefined) {
+    filteredData = data.filter(character => parseKi(character.ki) > from);
+  }
+  else if (to !== undefined) {
+    filteredData = data.filter(character => parseKi(character.ki) < to);
+  }
 
-    if (!to && from) return data.filter(character => parseKi(character.ki) > from)
+  return filteredData;
 };
 
-export const useCharacterFilter = (from: number | undefined, to: number | undefined, name: string | undefined) => {
+
+const dataAdapter = (data: Character[] | CharacterWithoutName | undefined): Character[] => {
+  if (!data) return []
+
+  if (Array.isArray(data)) return data
+
+  return data.items
+}
+
+export const useCharacterFilter = (from: string | null, to: string | null, name: string) => {
     const { data, isLoading } = useSearchCharacterQuery({name});
 
-    return { isLoading, data: filterByKi(data, from, to) }
+    const dataFormatted = dataAdapter(data)
+
+    const fromFormatted = !from ? undefined : Number(from)
+    const toFormatted = !to ? undefined : Number(to)
+
+    return { isLoading, data: filterByKi(dataFormatted, fromFormatted, toFormatted) }
 }

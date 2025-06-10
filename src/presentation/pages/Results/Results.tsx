@@ -8,10 +8,11 @@ import "./Results.css"
 const Results = () => {
     const [searchParams] = useSearchParams();
     const name = searchParams.get('name') || "";
-    const from = Number(searchParams.get('from'));
-    const to = Number(searchParams.get('to'));
+    const from = searchParams.get('from');
+    const to = searchParams.get('to');
 
     const { data, isLoading } = useCharacterFilter(from, to, name)
+    
     return (
         <Layout>
             <h2>{data?.length} results found:</h2>
