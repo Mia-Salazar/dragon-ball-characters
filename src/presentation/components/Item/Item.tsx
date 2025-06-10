@@ -11,8 +11,8 @@ const Item = ({ description, image, name, ki }: Character) => {
     }
 
     return (
-        <li className={isOpen ? 'item-container selected' : 'item-container'}>
-            <button className="item-button" onClick={handleClick} aria-label="Open dropdown">
+        <li className={isOpen ? 'item-container selected' : 'item-container'} aria-expanded={isOpen ? true : false}>
+            <button className="item-button" onClick={handleClick} aria-label="Open dropdown" aria-controls="dropdown">
                 <h3 className={isOpen ? 'hidden' : 'item-title'}>{name} </h3>
                 <p className="item-subtitle">
                     <span className={isOpen ? 'hidden' : 'item-ki'}>{ki}</span> 
@@ -21,7 +21,7 @@ const Item = ({ description, image, name, ki }: Character) => {
             </button>
             {isOpen && 
                 (
-                    <div>
+                    <div id="dropdown">
                         <figure className="item-image-wrapper">
                             <img alt="" src={image} className="image" />
                         </figure>
