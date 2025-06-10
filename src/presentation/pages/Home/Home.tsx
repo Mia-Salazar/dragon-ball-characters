@@ -7,6 +7,7 @@ import './Home.css'
 const Home = () => {
     const navigate = useNavigate();
     const [form, setForm] = useState({name: '', from: undefined, to: undefined})
+    const buttonIsDisabled = !form.name && !form.from && !form.to
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
@@ -22,6 +23,8 @@ const Home = () => {
         navigate(`/results?name=${form.name}&from=${form.from}&to=${form.to}`);
     };
 
+    console.log(!form.name, !form.from,  !form.to, form)
+
     return (
         <Layout>
             <h2>What Dragon Ball character are you looking for?</h2>
@@ -31,7 +34,7 @@ const Home = () => {
                     <Input type="number" id="from" placeholder="From" text="Search by ki" value={form.from} onChange={handleChange} />
                     <Input type="number" hasLabel={false} id="to" placeholder="To" text="Search by ki" value={form.to} onChange={handleChange} />
                 </div>
-                <Button text="Search" />
+                <Button isDisabled={buttonIsDisabled} text="Search" />
             </form>
         </Layout>
     );

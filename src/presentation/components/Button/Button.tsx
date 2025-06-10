@@ -1,9 +1,9 @@
 import type { ButtonProps } from '../../../domain/button';
 import './Button.css'
 
-const Button = ({ text }: ButtonProps) => {
+const Button = ({ isDisabled, text }: ButtonProps) => {
   return (
-    <button className="button">{text}</button>
+    <button disabled={isDisabled} className="button">{text}</button>
   );
 };
 
