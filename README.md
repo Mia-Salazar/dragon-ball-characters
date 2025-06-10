@@ -24,10 +24,17 @@ The API used is Dragon Ball API. You can read [the documentation here](https://w
 
 ## Technologies
 - React: Library used for the whole application
-- Typescript
+- Typescript: For interactions
 - CSS: for styling grouping styled by type
 - Jest & testing-library: For testing
 - React Query: To cache responses
+
+## Decissions
+- I have used this architecture in order to keep layers separated and improve scalability and readbility
+- For ordering CSS I have grouped styling properties by type
+- I have added React Query to improve cache and error management
+- I have used FontAwesome for icons
+- I have used semantic HTML and ARIA labels to improve accessibility
 
 ## Architecture
 <pre>
@@ -50,6 +57,5 @@ src/
 - Add tests
 - Create a custom spinner for loading
 - Improve error management
-- Icons on inputs
 - Add code formater
 - Use branches

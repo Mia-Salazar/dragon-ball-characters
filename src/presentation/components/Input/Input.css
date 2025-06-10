@@ -1,6 +1,7 @@
 .input-container {
-    margin-bottom: 16px;
+    position: relative;
     display: flex;
+    margin-bottom: 16px;
     flex-direction: column;
     width: 100%;
 }
@@ -10,7 +11,6 @@
 }
 
 /*We hide it visually but reacheable to assitive technologies*/
-
 .label.hide {
     position: absolute;
     left: -9999em;
@@ -20,4 +20,22 @@
     padding: 16px;
     border: 1px solid black;
     border-radius: 8px;
+}
+
+.input.text {
+    padding-left: 32px;
+}
+
+.input-container .arrow {
+    position: absolute;
+    right: 16px;
+    bottom: 21px;
+    padding: 2px;
+}
+
+.input-icon {
+    position: absolute;
+    margin: 0;
+    top: 38px;
+    left: 16px;
 }
