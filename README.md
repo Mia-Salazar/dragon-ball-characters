@@ -1,8 +1,5 @@
 # Dragon Ball characters
 
-## Live
-The web is live [here]()
-
 ## Comands
 To run the application:
 ```console
